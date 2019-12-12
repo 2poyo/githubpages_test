@@ -28,5 +28,6 @@ function parseJSON(){
     window.alert(obj)
 }
 function click(){
-    document.getElementById("text-button").innerHTML = "クリックされた";
+    document.getElementById('text-button').innerHTML = "クリックされた";
 }
+

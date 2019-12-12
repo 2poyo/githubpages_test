@@ -1,0 +1,45 @@
+#collapse{
+    border-collapse: collapse;
+}
+
+.nowMonth{
+    font-size: 45px;
+    background-color: #5ae1ff;
+}
+
+.indexWeek{
+    font-size: 45px;
+    width: 50px;
+    height: 50px;
+    background: #97f8ff;
+    text-align: center;
+}
+.thin_day{
+    font-size: 30px;
+    width: 125px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+    opacity: 0.4;
+}
+.day{
+    font-size: 30px;
+    width: 125px;
+    height: 150px;
+    text-align: center;
+    vertical-align: top;
+}
+.subButtom {
+    font-size: 30px;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #5ae1ff 0%, #1c6aff 100%);
+    transition: .4s;
+}
+
+.subButtom:hover {
+    background-image: linear-gradient(45deg, #5ae1ff 0%, #1c6aff 100%);
+}
