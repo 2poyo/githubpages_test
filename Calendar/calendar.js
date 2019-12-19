@@ -11,6 +11,30 @@ function submitPlan() {
 
 const weeks = ['日', '月', '火', '水', '木', '金', '土'];
 
+var taskData = {
+    1 :{
+        "moji":"wawawa"
+    }
+};
+
+
+
+function createData(year,month) {
+    var CalData = {};
+    CalData["year"] = year ;
+    CalData["month"] = month ;
+    CalData["startDate"] = new Date(year, month - 1, 1); // 月の最初の日を取得
+    CalData["endDate"] = new Date(year, month,  0); // 月の最後の日を取得
+    CalData["endDayCount"] = CalData["endDate"].getDate(); // 月の末日
+    CalData["lastMonthEndDate"] = new Date(year, month - 2, 0); // 前月の最後の日の情報
+    CalData["lastMonthendDayCount"] = CalData["lastMonthEndDate"].getDate(); // 前月の末日
+    CalData["startDay"] = CalData["startDate"].getDay(); // 月の最初の日の曜日を取得
+    // for(let i=0;i<10;i++){
+    //     CalData[i.toString()] = i ;
+    //     alert(CalData[i.toString()]);
+    // }
+
+}
 
 
 
@@ -38,6 +62,10 @@ function createCalendar() {
         '<input type="image" src="img/right_buttom.png" align="right">' +
         '<div align="center" class="nowMonth"> ' + year + "年" + mon + "月" + '</div>' +
         '</th></tr>';
+    for(let i=0;i<10;i++){
+        CalData[i.toString()] = i ;
+        alert(CalData[i.toString()]);
+    }
     for (let i = 0; i < weeks.length; i++) calendarHtml += '<td class="indexWeek">' + weeks[i] + '</td>';
     for(let i=0;i<6;i++){
         calendarHtml += '<tr>';
@@ -61,44 +89,13 @@ function createCalendar() {
 
         }
     }
-
-
-
-
-
-
-
-
-
-
-    calendarHtml += '</table>'
-    const sec = document.createElement('section')
-    sec.innerHTML = calendarHtml
+    calendarHtml += '</table>';
+    const sec = document.createElement('section');
+    sec.innerHTML = calendarHtml;
     document.querySelector('#calendar').appendChild(sec)
     
 }
 
 
-function getToday() {
-    var now = new Date()
-    var year = now.getFullYear()
-    var mon =  now.getMonth()+1
-    var day = now.getDate()
-    var today = year + "年" + mon + "月" + day + "日"
-    var colSpan = document.getElementById("colSpan")
-    var max_week = 7
-    // var table = document.getElementById("collapse")
-    // var rowTable = table.rows.length
-    const startDate = new Date(year,mon-1,1)
-    const endDate = new Date(year,mon,0)
-    let calendarHtml = ''
-    calendarHtml += '<table boder="1">'
-    calendarHtml += '<tr>year + "年" + mon + "月"</tr>'
-
-    // colSpan.setAttribute("colspan",max_week)
-
-    calendarHtml += '</table>'
-    return today
-}
 
 createCalendar();
